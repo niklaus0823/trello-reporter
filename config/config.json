@@ -1,0 +1,39 @@
+{
+  "WR": {
+    "type": "WR",
+    "name": "niklaus",
+    "trello": {
+      "key" : "key",
+      "token" : "token",
+      "username": "username"
+    },
+    "filter" : {
+      "boardName" : ["BoardName"],
+      "listNames" : ["checklist1", "checklist12"],
+      "labels" : ["labels1", "labels2", "labels3", "labels4"]
+    },
+    "mail": {
+      "send": false
+    }
+  },
+  "DR": {
+    "type": "DR",
+    "name": "niklaus",
+    "trello": {
+      "key" : "key",
+      "token" : "token",
+      "username": "username"
+    },
+    "filter" : {
+      "boardName" : ["BoardName"],
+      "listNames" : ["checklist1", "checklist12"],
+      "labels" : ["labels1", "labels2", "labels3", "labels4"]
+    },
+    "mail": {
+        "send": true,
+        "from": "mail1@163.com",
+        "to": ["mail2@163.com"],
+        "setting": "$username:$password@smtp.exmail.qq.com"
+    }
+  }
+}
