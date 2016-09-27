@@ -8,9 +8,9 @@
       "username": "username"
     },
     "filter" : {
-      "boardName" : ["BoardName"],
-      "listNames" : ["checklist1", "checklist12"],
-      "labels" : ["labels1", "labels2", "labels3", "labels4"]
+      "boardName" : ["核心汇报"],
+      "listNames" : ["后端", "后端：沟通"],
+      "labels" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌"]
     },
     "mail": {
       "send": false
@@ -25,9 +25,9 @@
       "username": "username"
     },
     "filter" : {
-      "boardName" : ["BoardName"],
-      "listNames" : ["checklist1", "checklist12"],
-      "labels" : ["labels1", "labels2", "labels3", "labels4"]
+      "boardName" : ["技术部核心团队", "核心汇报"],
+      "listNames" : ["冯洁", "后端", "后端：沟通"],
+      "labels" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌"]
     },
     "mail": {
         "send": true,

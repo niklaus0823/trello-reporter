@@ -9,8 +9,8 @@ var common  = require('../lib/common');
 var utility = require('./utility');
 
 var Controller = function() {
-  this.type   = null;
-  this.dateMonth  = null;
+  this.type       = null;
+  this.dateString = null;
   this.configs    = null;
 
   this.taskData   = null;
@@ -18,14 +18,23 @@ var Controller = function() {
 var handler = new Controller();
 var configs = require('../config/config.json');
 
-Controller.prototype.run = function(type, dateMonth) {
+Controller.prototype.run = function(type, dateString) {
   if (_.keys(configs).indexOf(type) === -1) {
-    throw new Error('Invalid team name: ' + type + ', it shall be included in: ' + JSON.stringify(_.keys(configs)));
+    throw new Error('Invalid params:type: ' + type + ', it shall be included in: ' + JSON.stringify(_.keys(configs)));
+  }
+
+  if (typeof dateString == 'undefined') {
+    dateString = common.dateToString(new Date());
+  } else {
+    var date = new Date(dateString);
+    if (date == 'Invalid Date') {
+      throw new Error('Invalid params:date: ' + dateString + ', it shall be a valid date!');
+    }
   }
 
   // init params
   this.type       = type;
-  this.dateMonth  = dateMonth;
+  this.dateString = dateString;
   this.configs    = configs[type];
   var _this = this;
 
@@ -63,7 +72,7 @@ Controller.prototype.buildTaskData = function(data) {
   var cardData = data.cardData;
   var actionData = data.actionData;
   var checklistData = data.checklistData;
-  var now = common.dateToString(new Date());
+  var now = common.dateToString(_this.dateString, true);
 
   var id;
   var idCard;
@@ -87,8 +96,7 @@ Controller.prototype.buildTaskData = function(data) {
     var message = actionData[i2].message;
 
     // 获取当天的所有message
-    if (common.dateToString(new Date(actionData[i2].date))
-      == common.dateToString(now)) {
+    if (common.dateToString(actionData[i2].date, true) == now) {
       cardData[idCard].messages.push(message);
     }
   }
@@ -260,7 +268,7 @@ Controller.prototype.sendMail = function() {
   html+= "</table>";
 
   var mailConfig = _this.configs.mail;
-  var fileName = _this.configs.type + '_' + _this.configs.name + '_' + _this.dateMonth;
+  var fileName = _this.configs.type + '_' + _this.configs.name + '_' + _this.dateString;
   var transport = mailer.createTransport('smtps://' + mailConfig.setting);
 
   // 发送邮件

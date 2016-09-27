@@ -74,9 +74,9 @@ Excel.prototype.buildOverallSheet = function() {
 
 Excel.prototype.dump = function() {
   // 导出文件
-  var dateMonth = this.controller.dateMonth;
+  var dateString = this.controller.dateString;
   var file = xlsx.build(this.workbook);
-  libFs.writeFileSync(libPath.join('csv', this.controller.configs.type + '_' + this.controller.configs.name + '_' + dateMonth + '.xlsx'), file, 'binary');
+  libFs.writeFileSync(libPath.join('csv', this.controller.configs.type + '_' + this.controller.configs.name + '_' + common.dateToString(dateString, true) + '.xlsx'), file, 'binary');
 };
 
 Excel.prototype.addSheet = function(name, sheet) {

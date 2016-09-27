@@ -2,5 +2,5 @@
 
 cd /d ..
 
-node index.js WR
+node index.js DR
 rem & pause > null
