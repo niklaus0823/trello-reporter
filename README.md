@@ -17,8 +17,8 @@ Trello Report
             "name": "niklaus",           // 项目名称，用于生成Excel文件名拼接
             "trello": {
               "key" : "XXX",             // Trello授权Key，可以从`https://trello.com/app-key`获取
-              "token" : "XXX",           // Trello授权token，可以从`https://trello.com/app-key`获取
-              "username": "XXX"          // Trello拥有者账户名，可以从`https://trello.com/`右上角获取
+              "token" : "XXX",           // Trello授权token，可以从`https://trello.com/app-key`中通过点击`Token`连接，进行授权，然后获得Token，而非app-key页面上的样例
+              "username": "XXX"          // Trello拥有者账户名，可以从`https://trello.com/`右上角获取 **昵称（账户名）**，通常是一串英文+数字
             },
             "filter" : {
               "boardName" : ["BoardName"],     // 看板过滤，工具只读取在这里存在的看板数据
@@ -29,16 +29,15 @@ Trello Report
               "send": false,              // 是否发送，enum(true, false), true:默认发送，false:默认不发送
               "from": "mail1@163.com",    // 寄件邮箱
               "to": ["mail2@163.com"],    // 收件邮箱
-              "setting": "$username:$password@smtp.exmail.qq.com" //smtp配置，$username:填写帐号（同邮箱），$password：填写邮箱密码
+              "setting": "username:password@smtp.exmail.qq.com" //smtp配置，$username:填写帐号（同邮箱），$password：填写邮箱密码
             }
           }
         }
 
 
 ### 2.2 脚本运行
-进入`bin`文件夹，
-运行：`./run.sh 项目简写 指定日期（YYYY-MM-DD）` 可以读取`指定日期`的Trello的Comment
-如果未指定日期`./run.sh 项目简写`，则默认按当日时间为`指定日期`
+运行：`node index.js 项目简写 指定日期（YYYY-MM-DD）` 可以读取`指定日期`的Trello的Comment
+如果未指定日期`node index.js 项目简写`，则默认按当日时间为`指定日期`
 
 ### 2.3 输出结果
 脚本会在`csv`文件夹里输出：
@@ -48,7 +47,7 @@ Trello Report
     * 项目简写：WR
     * 项目名称：COMMON_冯洁
     * 报告时间: 20160920
-    * 生成Excel名：WR_COMMON_冯洁_20160920.xlsx
+    * 生成Excel名：WR_COMMON_冯洁_2016-09-20.xlsx
 
 ### 2.4 特殊格式
 
