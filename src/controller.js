@@ -268,7 +268,7 @@ Controller.prototype.sendMail = function() {
   html+= "</table>";
 
   var mailConfig = _this.configs.mail;
-  var fileName = _this.configs.type + '_' + _this.configs.name + '_' + _this.dateString;
+  var fileName = _this.configs.type + '_' + _this.configs.name + '_' + common.dateToString(_this.dateString, true);
   var transport = mailer.createTransport('smtps://' + mailConfig.setting);
 
   // 发送邮件
