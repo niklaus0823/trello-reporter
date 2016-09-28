@@ -2,5 +2,6 @@
 
 cd /d ..
 
-node index.js DR 20160923
-rem & pause > nul
+node index.js DR 2016-09-27
+
+pause

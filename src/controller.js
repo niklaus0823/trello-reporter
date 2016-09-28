@@ -70,7 +70,7 @@ Controller.prototype.collectTaskData = function() {
 Controller.prototype.buildTaskData = function(data) {
   var _this = this;
   var cardData = data.cardData;
-  var actionData = data.actionData;
+  var commentData = data.commentData;
   var checklistData = data.checklistData;
   var now = common.dateToString(_this.dateString, true);
 
@@ -87,16 +87,17 @@ Controller.prototype.buildTaskData = function(data) {
     cardData[i1].checkList = {};
   }
 
-  for (var i2 in actionData) {
-    if (!actionData.hasOwnProperty(i2)) {
+  for (var i2 in commentData) {
+    if (!commentData.hasOwnProperty(i2)) {
       continue;
     }
 
-    idCard = actionData[i2].idCard;
-    var message = actionData[i2].message;
+    idCard = commentData[i2].idCard;
+    var message = commentData[i2].message;
 
     // 获取当天的所有message
-    if (common.dateToString(actionData[i2].date, true) == now) {
+    if (cardData.hasOwnProperty(idCard)
+      && common.dateToString(commentData[i2].date, true) == now) {
       cardData[idCard].messages.push(message);
     }
   }

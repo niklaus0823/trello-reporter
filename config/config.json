@@ -1,11 +1,11 @@
 {
   "WR": {
     "type": "WR",
-    "name": "niklaus",
+    "name": "COMMON_冯洁",
     "trello": {
-      "key" : "key",
-      "token" : "token",
-      "username": "username"
+      "key" : "23b25ee3b7bf3c157eb87929fcdff4f7",
+      "token" : "3f71e7724e5cc2679a79b64ec31fcf52c530ac17b0c40b13b11a4359fe37bf8f",
+      "username": "niklaus0823"
     },
     "filter" : {
       "boardName" : ["核心汇报"],
@@ -18,22 +18,22 @@
   },
   "DR": {
     "type": "DR",
-    "name": "niklaus",
+    "name": "COMMON_冯洁",
     "trello": {
-      "key" : "key",
-      "token" : "token",
-      "username": "username"
+      "key" : "23b25ee3b7bf3c157eb87929fcdff4f7",
+      "token" : "3f71e7724e5cc2679a79b64ec31fcf52c530ac17b0c40b13b11a4359fe37bf8f",
+      "username": "niklaus0823"
     },
     "filter" : {
       "boardName" : ["技术部核心团队", "核心汇报"],
-      "listNames" : ["冯洁", "后端", "后端：沟通"],
+      "listNames" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌", "后端", "后端：沟通"],
       "labels" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌"]
     },
     "mail": {
-        "send": true,
-        "from": "mail1@163.com",
-        "to": ["mail2@163.com"],
-        "setting": "$username:$password@smtp.exmail.qq.com"
+      "send": true,
+      "from": "fengjie@shinezone.com",
+      "to": ["fengjie@shinezone.com"],
+      "setting": "$username:$password@smtp.exmail.qq.com"
     }
   }
 }

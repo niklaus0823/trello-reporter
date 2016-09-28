@@ -13,7 +13,7 @@ var TrelloData = function (key, token, username) {
   this.listData = [];
   this.cardData = {};
   this.checklistData = [];
-  this.actionData = [];
+  this.commentData = [];
 };
 
 TrelloData.prototype.getData = function(filter) {
@@ -31,7 +31,7 @@ TrelloData.prototype.getData = function(filter) {
         return _this.getChecklistsOnCard()
       })
       .then(function () {
-        return _this.getActionsOnCard()
+        return _this.getCommentOnBoard()
       })
       .then(function () {
         resolve(_this);
@@ -127,24 +127,22 @@ TrelloData.prototype.getChecklistsOnCard = function () {
 };
 
 
-TrelloData.prototype.getActionsOnCard = function () {
+TrelloData.prototype.getCommentOnBoard = function () {
   var _this = this;
   var p = [];
-  for (var i in _this.cardData) {
+  var t = 0;
+  for (var i in _this.boardData) {
     p.push(new Promise(function (resolve) {
-      _this.trello.getActionsOnCard(_this.cardData[i].id).then(function (res) {
+      _this.trello.getCommentOnBoard(_this.boardData[i].id).then(function (res) {
         for (var j in res) {
           if (res.hasOwnProperty(j)) {
-            if (res[j].type == "commentCard") {
-              _this.actionData.push({
-                id: res[j].id,
-                idCard: res[j].data.card.id,
-                date: res[j].date,
-                message: res[j].data.text
-              })
-            }
+            _this.commentData.push({
+              id: res[j].id,
+              idCard: res[j].data.card.id,
+              date: res[j].date,
+              message: res[j].data.text
+            });
           }
-
         }
         resolve();
       });
