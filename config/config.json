@@ -1,16 +1,16 @@
 {
   "WR": {
     "type": "WR",
-    "name": "COMMON_冯洁",
+    "name": "COMMON",
     "trello": {
-      "key" : "23b25ee3b7bf3c157eb87929fcdff4f7",
-      "token" : "3f71e7724e5cc2679a79b64ec31fcf52c530ac17b0c40b13b11a4359fe37bf8f",
-      "username": "niklaus0823"
+      "key" : "",
+      "token" : "",
+      "username": ""
     },
     "filter" : {
-      "boardName" : ["核心汇报"],
-      "listNames" : ["后端", "后端：沟通"],
-      "labels" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌"]
+      "boardName" : ["boardName1"],
+      "listNames" : ["listName1", "listName2"],
+      "labels" : ["label1", "label2", "label3", "label4"]
     },
     "mail": {
       "send": false
@@ -18,21 +18,21 @@
   },
   "DR": {
     "type": "DR",
-    "name": "COMMON_冯洁",
+    "name": "COMMON",
     "trello": {
-      "key" : "23b25ee3b7bf3c157eb87929fcdff4f7",
-      "token" : "3f71e7724e5cc2679a79b64ec31fcf52c530ac17b0c40b13b11a4359fe37bf8f",
-      "username": "niklaus0823"
+      "key" : "",
+      "token" : "",
+      "username": ""
     },
     "filter" : {
-      "boardName" : ["技术部核心团队", "核心汇报"],
-      "listNames" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌", "后端", "后端：沟通"],
-      "labels" : ["冯洁", "周俊辉", "朱昀栎", "翁天萌"]
+      "boardName" : ["boardName1"],
+      "listNames" : ["listName1", "listName2"],
+      "labels" : ["label1", "label2", "label3", "label4"]
     },
     "mail": {
       "send": true,
-      "from": "fengjie@shinezone.com",
-      "to": ["fengjie@shinezone.com"],
+      "from": "mars.fengjie@gmail.com",
+      "to": [" mars.fengjie@gmail.com"],
       "setting": "$username:$password@smtp.exmail.qq.com"
     }
   }
