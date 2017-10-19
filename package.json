@@ -1,13 +1,11 @@
 {
-  "name": "trello-kit",
-  "version": "1.0.0",
-  "description": "",
+  "name": "trello-report",
+  "version": "0.0.1",
+  "description": "Build daily report with Trello",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "Fengjie <https://github.com/niklaus0823>",
+  "license": "MIT",
+  "repository": "https://github.com/niklaus0823/trello-report",
   "dependencies": {
     "async": "^1.0.0",
     "csv": "^0.4.2",
