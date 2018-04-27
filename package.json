@@ -1,22 +1,32 @@
 {
-  "name": "trello-report-kit",
-  "version": "0.0.2",
-  "description": "Build daily report with Trello",
-  "main": "index.js",
-  "author": "Fengjie <https://github.com/niklaus0823>",
+  "name": "trello-reporter",
+  "version": "0.0.1",
+  "author": "fengjie",
+  "description": "Reporter Tool based on trello.",
+  "homepage": "https://github.com/niklaus0823/trello-reporter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niklaus0823/trello-reporter.git"
+  },
+  "bugs": "https://github.com/niklaus0823/trello-reporter/issues",
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "./build/reporter.js",
+  "bin": {
+    "reporter": "./build/reporter.js"
+  },
   "license": "MIT",
-  "repository": "https://github.com/niklaus0823/trello-report",
   "dependencies": {
-    "async": "^1.0.0",
-    "csv": "^0.4.2",
-    "exceljs": "^0.2.2",
-    "iconv-lite": "^0.4.9",
-    "lodash": "^3.10.1",
-    "moment": "^2.10.3",
-    "node-xlsx": "^0.5.1",
-    "nodemailer": "^2.6.0",
-    "q": "^1.4.1",
-    "restler": "^3.4.0",
-    "trello": "git:github.com/niklaus0823/trello.git#master"
+    "commander": "^2.14.1",
+    "debug": "^3.1.0",
+    "fs-extra": "^5.0.0",
+    "iterable-readfiles": "^1.0.5",
+    "prompt": "^1.0.0",
+    "trello-api": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.1",
+    "@types/node": "^9.4.1"
   }
 }
