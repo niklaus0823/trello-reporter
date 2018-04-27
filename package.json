@@ -1,8 +1,13 @@
 {
   "name": "trello-reporter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "fengjie",
   "description": "Reporter Tool based on trello.",
+  "keywords": [
+    "TypeScript",
+    "Trello",
+    "Reporter"
+  ],
   "homepage": "https://github.com/niklaus0823/trello-reporter#readme",
   "repository": {
     "type": "git",
@@ -23,7 +28,7 @@
     "fs-extra": "^5.0.0",
     "iterable-readfiles": "^1.0.5",
     "prompt": "^1.0.0",
-    "trello-api": "0.0.1"
+    "trello-api": "^0.0.3"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.1",

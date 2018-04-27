@@ -99,3 +99,39 @@ function isLength(value) {
     return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= 9007199254740991;
 }
 exports.isLength = isLength;
+/**
+ * Get setting.json object
+ *
+ * @param {string} path
+ * @returns {SettingSchema}
+ */
+function getSetting(path) {
+    return JSON.parse(LibFs.readFileSync(path).toString());
+}
+exports.getSetting = getSetting;
+function dateToString(timestamp, noLodash) {
+    if (timestamp === '') {
+        return timestamp;
+    }
+    // if (typeof timestamp == 'string') {
+    //     let date = new Date(timestamp);
+    //     if (date == 'Invalid Date') return '';
+    // }
+    //
+    // var year = date.getFullYear();
+    // var month = date.getMonth() + 1;
+    // if (month < 10) {
+    //     month = '0' + month;
+    // }
+    // var day = date.getDate();
+    // if (day < 10) {
+    //     day = '0' + day;
+    // }
+    //
+    // if (noLodash == true) {
+    //     return year + '' + month + '' + day;
+    // } else {
+    //     return year + '-' + month + '-' + day;
+    // }
+}
+exports.dateToString = dateToString;

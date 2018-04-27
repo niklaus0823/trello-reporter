@@ -2,6 +2,22 @@ import * as LibFs from 'fs-extra';
 import * as LibPath from 'path';
 import {readfiles, IgnoreType, IgnoreFunction} from 'iterable-readfiles';
 
+export interface SettingSchema {
+    title: string;
+    trello_key: string;
+    trello_token: string;
+    trello_memberId: string;
+    filter_boards: Array<string>;
+    filter_lists: Array<string>;
+    filter_labels: Array<string>;
+    mail_send: string;
+    mail_from: string;
+    mail_to: string;
+    mail_username: string;
+    mail_password: string;
+    mail_smtp: string;
+}
+
 /**
  * Find project dir
  *
@@ -72,7 +88,7 @@ export const shallIgnore = function (path: string, excludes?: Array<string>, def
  * @returns {boolean}
  */
 function isObject(value) {
-    return value !== null && (typeof value === 'object' || typeof value === 'function')
+    return value !== null && (typeof value === 'object' || typeof value === 'function');
 }
 
 /**
@@ -82,7 +98,7 @@ function isObject(value) {
  * @returns {boolean}
  */
 export function isArray(value: any): boolean {
-    return value !== null && isObject(value) && isLength(value.length)
+    return value !== null && isObject(value) && isLength(value.length);
 }
 
 
@@ -93,5 +109,44 @@ export function isArray(value: any): boolean {
  * @returns {boolean}
  */
 export function isLength(value: any): boolean {
-    return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= 9007199254740991
+    return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= 9007199254740991;
+}
+
+/**
+ * Get setting.json object
+ *
+ * @param {string} path
+ * @returns {SettingSchema}
+ */
+export function getSetting(path: string): SettingSchema {
+    return JSON.parse(LibFs.readFileSync(path).toString());
+}
+
+
+export function dateToString(timestamp: string | Date, noLodash?: boolean): string {
+
+    if (timestamp === '') {
+        return timestamp;
+    }
+
+    // if (typeof timestamp == 'string') {
+    //     let date = new Date(timestamp);
+    //     if (date == 'Invalid Date') return '';
+    // }
+    //
+    // var year = date.getFullYear();
+    // var month = date.getMonth() + 1;
+    // if (month < 10) {
+    //     month = '0' + month;
+    // }
+    // var day = date.getDate();
+    // if (day < 10) {
+    //     day = '0' + day;
+    // }
+    //
+    // if (noLodash == true) {
+    //     return year + '' + month + '' + day;
+    // } else {
+    //     return year + '-' + month + '-' + day;
+    // }
 }
