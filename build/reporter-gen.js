@@ -68,7 +68,7 @@ class CLI {
     _collect() {
         return __awaiter(this, void 0, void 0, function* () {
             let trello = new trello_api_1.Trello(this._setting.trello_key, this._setting.trello_token);
-            trello.getBoards(this._setting.trello_memberId)
+            yield trello.getBoards(this._setting.trello_memberId)
                 .then((boards) => this._loadBoards(boards))
                 .then(() => {
                 let p = [];
@@ -101,6 +101,9 @@ class CLI {
                 });
                 return Promise.all(p);
             })
+                .then(() => {
+                console.log('_collect over');
+            })
                 .catch((err) => {
                 throw new Error(err);
             });
@@ -108,6 +111,8 @@ class CLI {
     }
     _generate() {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log('_generate start');
+            console.log(Utility.dateToString(this._date));
         });
     }
     _send() {
@@ -168,10 +173,9 @@ class CLI {
             trello.getCommentsOnCard(cardId)
                 .then((comments) => {
                 comments.forEach((comment) => {
-                    console.log(comment);
-                    // if (cardIds.indexOf(comment.id) != -1) {
-                    //     this._checklists[checklist.id] = checklist;
-                    // }
+                    if (cardIds.indexOf(comment.data.card.id)) {
+                        this._comments[comment.id] = comment;
+                    }
                 });
                 resolve();
             });

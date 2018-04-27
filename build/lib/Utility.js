@@ -109,29 +109,17 @@ function getSetting(path) {
     return JSON.parse(LibFs.readFileSync(path).toString());
 }
 exports.getSetting = getSetting;
-function dateToString(timestamp, noLodash) {
-    if (timestamp === '') {
-        return timestamp;
+function dateToString(date, noLodash) {
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let monthPrefix = (month < 10) ? '0' : '';
+    let day = date.getDate();
+    let dayPrefix = (day < 10) ? '0' : '';
+    if (noLodash == true) {
+        return year + '' + monthPrefix + month + '' + dayPrefix + day;
     }
-    // if (typeof timestamp == 'string') {
-    //     let date = new Date(timestamp);
-    //     if (date == 'Invalid Date') return '';
-    // }
-    //
-    // var year = date.getFullYear();
-    // var month = date.getMonth() + 1;
-    // if (month < 10) {
-    //     month = '0' + month;
-    // }
-    // var day = date.getDate();
-    // if (day < 10) {
-    //     day = '0' + day;
-    // }
-    //
-    // if (noLodash == true) {
-    //     return year + '' + month + '' + day;
-    // } else {
-    //     return year + '-' + month + '-' + day;
-    // }
+    else {
+        return year + '-' + monthPrefix + month + '-' + dayPrefix + day;
+    }
 }
 exports.dateToString = dateToString;

@@ -28,7 +28,7 @@
     "fs-extra": "^5.0.0",
     "iterable-readfiles": "^1.0.5",
     "prompt": "^1.0.0",
-    "trello-api": "^0.0.3"
+    "trello-api": "0.0.4"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.1",
