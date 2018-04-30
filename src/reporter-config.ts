@@ -164,14 +164,14 @@ class CLI {
             trello_token: this._input.trello_token,
             trello_memberId: this._input.trello_memberId,
             filter_boards: this._input.filter_boards.split(','),
-            filter_lists: this._input.filter_lists.split(','),
-            filter_labels: this._input.filter_labels.split(','),
+            filter_lists: (this._input.filter_lists == 'null' || this._input.filter_lists == '') ? [] : this._input.filter_lists.split(','),
+            filter_labels: (this._input.filter_labels == 'null' || this._input.filter_labels == '') ? [] : this._input.filter_labels.split(','),
             mail_send: this._input.mail_send,
-            mail_from: this._input.mail_from,
-            mail_to: this._input.mail_to,
-            mail_username: this._input.mail_username,
-            mail_password: this._input.mail_password,
-            mail_smtp: this._input.mail_smtp,
+            mail_from: (this._input.mail_from == 'null') ? '' : this._input.mail_from,
+            mail_to: (this._input.mail_to == 'null') ? '' : this._input.mail_to,
+            mail_username: (this._input.mail_username == 'null') ? '' : this._input.mail_username,
+            mail_password: (this._input.mail_password == 'null') ? '' : this._input.mail_password,
+            mail_smtp: (this._input.mail_smtp == 'null') ? '' : this._input.mail_smtp,
         };
 
         await LibFs.writeFile(settingPath, Buffer.from(JSON.stringify(settings, null, 2)));

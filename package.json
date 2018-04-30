@@ -1,6 +1,6 @@
 {
   "name": "trello-reporter",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "author": "fengjie",
   "description": "Reporter Tool based on trello.",
   "keywords": [
@@ -27,11 +27,16 @@
     "debug": "^3.1.0",
     "fs-extra": "^5.0.0",
     "iterable-readfiles": "^1.0.5",
+    "lodash": "^4.17.10",
+    "node-xlsx": "^0.12.0",
+    "nodemailer": "^4.6.4",
     "prompt": "^1.0.0",
     "trello-api": "0.0.4"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.1",
-    "@types/node": "^9.4.1"
+    "@types/lodash": "^4.14.108",
+    "@types/node": "^9.4.1",
+    "@types/nodemailer": "^4.6.0"
   }
 }

@@ -7,9 +7,9 @@ export interface SettingSchema {
     trello_key: string;
     trello_token: string;
     trello_memberId: string;
-    filter_boards: Array<string>;
-    filter_lists: Array<string>;
-    filter_labels: Array<string>;
+    filter_boards: Array<string>; // 列出指定 boardName 下的相关信息，不允许位空
+    filter_lists: Array<string>; // 列出指定 listName 下的相关信息，允许为空，代表所有 list
+    filter_labels: Array<string>; // 列出指定 labels 相等的 card，允许为空，代表所有 card
     mail_send: string;
     mail_from: string;
     mail_to: string;
